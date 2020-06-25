@@ -12,7 +12,7 @@ test:
  assemblies:
  - '.\*\UnitTest1.dll'
 after_test:
- - vstest.console /logger:Appveyor x64\Release\UnitTest1.dll
+ - vstest.console /logger:Appveyor x64\Release\UnitTests.dll
 artifacts:
 - path: x64\Release\SWQMCW.exe
   name: Binary
