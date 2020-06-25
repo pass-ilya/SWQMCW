@@ -1,0 +1,19 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+configuration:
+ - Release
+before_build:
+ - ps: $Env:PLATFORM_TOOLSET="v142"
+build:
+  project: SWQMCW.sln
+  parallel: true
+  verbosity: minimal
+test:
+ assemblies:
+ - '.\*\UnitTest1.dll'
+after_test:
+ - vstest.console /logger:Appveyor x64\Release\UnitTest1.dll
+artifacts:
+- path: x64\Release\SWQMCW.exe
+  name: Binary
+deploy: off
