@@ -245,4 +245,4 @@ tree* removemin(tree* h) // удаление узла с минимальным 
 		return h->right;
 	h->left = removemin(h->left);
 	return balance(h);
-}
+} 
