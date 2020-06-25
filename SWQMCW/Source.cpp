@@ -79,7 +79,7 @@ void add(tree*& h, int val) {
 	if (val > h->value)
 		add(h->right, val);
 	if (val == h->value)//{cout << "Такой элемент уже есть" << endl; return;}
-		cout << "Такой элемент уже есть" << endl;
+		cout << "Tree have that element" << endl;
 
 	h = balance(h);
 }
